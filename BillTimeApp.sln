@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillTimeAppDesktop", "BillTimeAppDesktop\BillTimeAppDesktop.csproj", "{A9F10A24-5A10-4A47-AC48-92A67FB8BC08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillTimeAppLibrary", "BillTimeAppLibrary\BillTimeAppLibrary.csproj", "{36064B27-DBFE-4EDC-858D-5168685013DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9F10A24-5A10-4A47-AC48-92A67FB8BC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F10A24-5A10-4A47-AC48-92A67FB8BC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F10A24-5A10-4A47-AC48-92A67FB8BC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F10A24-5A10-4A47-AC48-92A67FB8BC08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36064B27-DBFE-4EDC-858D-5168685013DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36064B27-DBFE-4EDC-858D-5168685013DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36064B27-DBFE-4EDC-858D-5168685013DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36064B27-DBFE-4EDC-858D-5168685013DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96D7A762-A292-4B0D-843D-4BD410EBC0FD}
+	EndGlobalSection
+EndGlobal

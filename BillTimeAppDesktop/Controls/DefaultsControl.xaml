@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="BillTimeAppDesktop.Controls.DefaultsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BillTimeAppDesktop.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" 
+             d:DesignWidth="280"
+             d:Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--row 0-->
+        <TextBlock Grid.Row="0" 
+                   Grid.Column="0"
+                   Margin="0 0 0 5"
+                   FontWeight="DemiBold"
+                   TextDecorations="Underline"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2"
+                   FontSize="20">Defaults</TextBlock>
+       
+        <!--row 1-->
+        <TextBlock Grid.Row="1" 
+                   Grid.Column="0">Rate:</TextBlock>
+        <TextBox Grid.Row="1"
+                 Grid.Column="1" 
+                 x:Name="hourlyRateTextBox"
+                 Background="#C8C8C8"
+                 Margin="0 0 0 20"/>
+        <!--row 2-->
+        <StackPanel Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    Margin=" 0 0 0 20">
+            <CheckBox x:Name="preBillCheckBox"
+                      Margin="0 0 20 0"
+                      Background="#C8C8C8">Pre-bill</CheckBox>
+            <CheckBox x:Name="hasCutOffBillCheckBox"
+                      Background="#C8C8C8">Cut-off</CheckBox>
+        </StackPanel>
+
+        <!--row 3-->
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0">Cut-off Number:</TextBlock>
+        <TextBox Grid.Row="3"
+                 Grid.Column="1" 
+                 x:Name="cutOffTextBox"
+                 Background="#C8C8C8"
+                 Margin="0 0 0 20"/>
+
+        <!--row 4-->
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0">Mininum Hours:</TextBlock>
+        <TextBox Grid.Row="4"
+                 Grid.Column="1"
+                 x:Name="minimumHoursTextBox"
+                 Background="#C8C8C8"
+                 Margin="0 0 0 20"/>
+
+        <!--row 5-->
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0">Billing Increment:</TextBlock>
+        <TextBox Grid.Row="5"
+                 Grid.Column="1"
+                 x:Name="billingIncrementTextBox"
+                 Background="#C8C8C8"
+                 Margin="0 0 0 20"/>
+            
+        <!--row 6-->
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0">Round-up X min. :</TextBlock>
+        <TextBox Grid.Row="6"
+                 Grid.Column="1"
+                 x:Name="roundUpAfterXMinutesTextBox"
+                 Background="#C8C8C8"
+                 Margin="0 0 0 20"/>
+
+        <!--row 7-->
+        <Button x:Name="submitForm" 
+                Grid.Row="7"
+                Padding="5"
+                Background="Gray"
+                FontWeight="DemiBold"
+                Grid.ColumnSpan="2">Submit</Button>
+    </Grid>
+</UserControl>

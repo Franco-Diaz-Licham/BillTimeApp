@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="BillTimeAppDesktop.Controls.AboutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BillTimeAppDesktop.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" 
+             d:DesignWidth="280"
+             d:Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--row 0-->
+        <TextBlock Grid.Row="0" 
+                   Grid.Column="0"
+                   Margin="0 0 0 5"
+                   FontWeight="DemiBold"
+                   TextDecorations="Underline"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2"
+                   FontSize="20">About</TextBlock>
+
+    </Grid>
+</UserControl>
