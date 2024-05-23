@@ -8,4 +8,11 @@ public class PaymentModel
     public double Hours { get; set; }
     public double Amount { get; set; }
     public DateTime? Date { get; set; }
+
+    public string DateOnly {
+        get
+        {
+            return Date.Value.ToString("d");
+        }
+    }
 }

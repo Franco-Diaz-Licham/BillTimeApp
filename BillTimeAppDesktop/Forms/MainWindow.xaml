@@ -22,17 +22,31 @@
               IsMainMenu="True"
               FontSize="16">
             <MenuItem Header="_File">
-                <MenuItem x:Name="exitMenuItem" Header="E_xit"/>
-                <MenuItem x:Name="mainMenuItem" Header="_Main"/>
+                <MenuItem x:Name="exitMenuItem" 
+                          Header="E_xit"
+                          Click="exitMenuItem_Click"/>
+                <MenuItem x:Name="mainMenuItem" 
+                          Header="_Main"
+                          Click="mainMenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="_Editors">
-                <MenuItem x:Name="clientMenuItem" Header="_Client"/>
-                <MenuItem x:Name="paymentMenuItem" Header="_Payment"/>
-                <MenuItem x:Name="workMenuItem" Header="_Work"/>
-                <MenuItem x:Name="defaultsMenuItem" Header="_Defaults"/>
+                <MenuItem x:Name="clientMenuItem" 
+                          Header="_Client"
+                          Click="clientMenuItem_Click"/>
+                <MenuItem x:Name="paymentMenuItem" 
+                          Header="_Payment"
+                          Click="paymentMenuItem_Click"/>
+                <MenuItem x:Name="workMenuItem" 
+                          Header="_Work"
+                          Click="workMenuItem_Click"/>
+                <MenuItem x:Name="defaultsMenuItem" 
+                          Header="_Defaults"
+                          Click="defaultsMenuItem_Click"/>
             </MenuItem>
-            <MenuItem Header="_File">
-                <MenuItem x:Name="aboutMenuItem" Header="_About"/>
+            <MenuItem Header="_Help">
+                <MenuItem x:Name="aboutMenuItem" 
+                          Header="_About"
+                          Click="aboutMenuItem_Click"/>
             </MenuItem>
         </Menu>
         <ContentControl x:Name="content"

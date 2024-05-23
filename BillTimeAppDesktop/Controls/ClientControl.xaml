@@ -35,29 +35,36 @@
         <StackPanel Grid.Row="1"
                     Orientation="Horizontal"
                     Margin="0 0 0 5">
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical"
+                        x:Name="clientStackPanel">
                 <TextBlock>Client:</TextBlock>
                 <ComboBox x:Name="clientDropDown"
                           Background="#C8C8C8"
-                          Width="170"/>
+                          Width="170"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Id"
+                          SelectionChanged="clientDropDown_SelectionChanged"/>
             </StackPanel>
             <Button x:Name="editButton"
                     Margin="5 0 4 0"
                     Padding="5 2"
                     Background="Gray"
                     FontWeight="DemiBold"
-                    VerticalAlignment="Bottom">Edit</Button>
+                    VerticalAlignment="Bottom"
+                    Click="editButton_Click">Edit</Button>
             <Button x:Name="newButton"
                     Padding="5 2"
                     Background="Gray"
                     FontWeight="DemiBold"
-                    VerticalAlignment="Bottom">New</Button>
+                    VerticalAlignment="Bottom"
+                    Click="newButton_Click">New</Button>
         </StackPanel>
         
         <!--row 2-->
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal"
-                    Margin="0 0 0 5">
+                    Margin="0 0 0 5"
+                    x:Name="nameAndRateStackPanel">
             <StackPanel Orientation="Vertical"
                         Margin="0 0 14 0">
                 <TextBlock>Name:</TextBlock>
@@ -76,7 +83,8 @@
         <!--row 3-->
         <StackPanel Grid.Row="3"
                     Orientation="Vertical"
-                    Margin="0 0 0 10">
+                    Margin="0 0 0 10"
+                    x:Name="emailStackPanel">
             <TextBlock>Email:</TextBlock>
             <TextBox x:Name="emailTextBox"
                      Background="#C8C8C8"/>
@@ -85,18 +93,20 @@
         <!--row 4-->
         <StackPanel Grid.Row="4"
                     Orientation="Horizontal"
-                    Margin=" 0 0 0 5">
+                    Margin=" 0 0 0 5"
+                    x:Name="checkBoxesStackPanel">
             <CheckBox x:Name="preBillCheckBox"
                       Margin="0 0 20 0"
                       Background="#C8C8C8">Pre-bill</CheckBox>
-            <CheckBox x:Name="hasCutOffBillCheckBox"
+            <CheckBox x:Name="hasCutOffCheckBox"
                       Background="#C8C8C8">Cut-off</CheckBox>
         </StackPanel>
         
         <!--row 5-->
         <StackPanel Grid.Row="5"
                     Orientation="Horizontal"
-                    Margin="0 0 0 5">
+                    Margin="0 0 0 5"
+                    x:Name="roundUpStackPanel">
             <StackPanel Orientation="Vertical"
                         Margin="0 0 14 0">
                 <TextBlock>Cut-off Number:</TextBlock>
@@ -115,7 +125,8 @@
         <!--row 6-->
         <StackPanel Grid.Row="6"
                     Orientation="Horizontal"
-                    Margin="0 0 0 10">
+                    Margin="0 0 0 10"
+                    x:Name="incrementsStackPanel">
             <StackPanel Orientation="Vertical"
                         Margin="0 0 14 0">
                 <TextBlock>Billing Increment:</TextBlock>
@@ -136,6 +147,7 @@
                 Grid.Row="7"
                 Padding="5"
                 Background="Gray"
-                FontWeight="DemiBold">Submit</Button>
+                FontWeight="DemiBold"
+                Click="submitForm_Click">Submit</Button>
     </Grid>
 </UserControl>

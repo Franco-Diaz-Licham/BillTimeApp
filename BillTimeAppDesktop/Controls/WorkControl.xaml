@@ -35,7 +35,7 @@
                     Orientation="Vertical">
             <TextBlock>Client:</TextBlock>
             <ComboBox x:Name="clientDropDown"
-                          Background="#C8C8C8"/>
+                      Background="#C8C8C8"/>
         </StackPanel>
 
         <!--row 2-->
@@ -88,7 +88,7 @@
                       VerticalAlignment="Bottom">Pre-bill</CheckBox>
             <StackPanel Grid.Row="3"
                         Orientation="Vertical"
-                        Width="184">
+                        Width="183">
                 <TextBlock>Payment:</TextBlock>
                 <ComboBox x:Name="paymentDropDown"
                           Background="#C8C8C8"/>

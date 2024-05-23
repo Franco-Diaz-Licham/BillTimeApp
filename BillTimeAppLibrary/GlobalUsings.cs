@@ -1,2 +1,10 @@
 ﻿global using System.ComponentModel.DataAnnotations;
-
+global using Microsoft.Extensions.Configuration;
+global using System.Data;
+global using System.Data.SQLite;
+global using Dapper;
+global using BillTimeAppLibrary.Databases;
+global using BillTimeAppLibrary.Models;
+global using BillTimeAppLibrary.Helpers;
+global using System.Data.SqlClient;
+global using BillTimeAppLibrary.Enums;

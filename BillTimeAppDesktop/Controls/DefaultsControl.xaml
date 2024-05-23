@@ -51,7 +51,7 @@
             <CheckBox x:Name="preBillCheckBox"
                       Margin="0 0 20 0"
                       Background="#C8C8C8">Pre-bill</CheckBox>
-            <CheckBox x:Name="hasCutOffBillCheckBox"
+            <CheckBox x:Name="hasCutOffCheckBox"
                       Background="#C8C8C8">Cut-off</CheckBox>
         </StackPanel>
 
@@ -97,6 +97,7 @@
                 Padding="5"
                 Background="Gray"
                 FontWeight="DemiBold"
-                Grid.ColumnSpan="2">Submit</Button>
+                Grid.ColumnSpan="2"
+                Click="submitForm_Click">Submit</Button>
     </Grid>
 </UserControl>

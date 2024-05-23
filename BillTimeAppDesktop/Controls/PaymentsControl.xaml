@@ -37,19 +37,25 @@
                 <TextBlock>Client:</TextBlock>
                 <ComboBox x:Name="clientDropDown"
                           Background="#C8C8C8"
-                          Width="280"/>
+                          Width="264"
+                          DisplayMemberPath="Name"
+                          SelectionChanged="clientDropDown_Selected"/>
             </StackPanel>
         </StackPanel>
 
         <!--row 2-->
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal"
-                    Margin="0 0 0 5">
+                    Margin="0 0 0 5"
+                    x:Name="dateStackPanel">
             <StackPanel Orientation="Vertical">
                 <TextBlock>Date:</TextBlock>
                 <ComboBox x:Name="dateDropDown"
                           Background="#C8C8C8"
-                          Width="170"/>
+                          Width="160"
+                          DisplayMemberPath="DateOnly"
+                          SelectedValuePath="Id"
+                          SelectionChanged="dateDropDown_SelectionChanged"/>
             </StackPanel>
             <TextBlock x:Name="editButton"
                     Margin="5 0 4 0"
@@ -59,13 +65,15 @@
                     Padding="5 2"
                     Background="Gray"
                     FontWeight="DemiBold"
-                    VerticalAlignment="Bottom">New</Button>
+                    VerticalAlignment="Bottom"
+                    Click="newButton_Click">New</Button>
         </StackPanel>
         
         <!--row 3-->
         <StackPanel Grid.Row="3"
                     Orientation="Vertical"
-                    Margin="0 0 0 10">
+                    Margin="0 0 0 10"
+                    x:Name="amountStackPanel">
             <TextBlock>Amount:</TextBlock>
             <TextBox x:Name="amountTextBox"
                      Background="#C8C8C8"/>
@@ -74,7 +82,8 @@
         <!--row 4-->
         <StackPanel Grid.Row="4"
                     Orientation="Vertical"
-                    Margin="0 0 0 10">
+                    Margin="0 0 0 10"
+                    x:Name="hoursStackPanel">
             <TextBlock>Hours:</TextBlock>
             <TextBox x:Name="hoursTextBox"
                      Background="#C8C8C8"/>
@@ -85,6 +94,7 @@
                 Grid.Row="5"
                 Padding="5"
                 Background="Gray"
-                FontWeight="DemiBold">Submit</Button>
+                FontWeight="DemiBold"
+                Click="submitForm_Click">Submit</Button>
     </Grid>
 </UserControl>

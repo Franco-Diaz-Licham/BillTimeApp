@@ -13,19 +13,47 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--row 0-->
         <TextBlock Grid.Row="0" 
                    Grid.Column="0"
-                   Margin="0 0 0 5"
+                   Margin="0 0 0 20"
                    FontWeight="DemiBold"
                    TextDecorations="Underline"
                    HorizontalAlignment="Center"
                    Grid.ColumnSpan="2"
                    FontSize="20">About</TextBlock>
+        
+        <!--row 1-->
+        <TextBlock Grid.Row="1" 
+                   Grid.Column="0"
+                   Margin="0 40 0 5"
+                   FontWeight="Bold"
+                   FontStyle="Italic"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="2"
+                   FontSize="36">Bill Time App</TextBlock>
+        
+        <!--row 2-->
+        <TextBlock Grid.Row="2"
+                   Margin="0 0 0 20"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   FontStyle="Italic"
+                   HorizontalAlignment="Center">By: Franco Diaz Licham</TextBlock>
+
+        <!--row 2-->
+        <TextBlock Grid.Row="3"
+                   FontSize="14"
+                   Margin="10"
+                   TextWrapping="Wrap"
+                   Width="180"
+                   HorizontalAlignment="Center">
+            This is a small application to help a developer
+            keep track of their work for clients.
+        </TextBlock>
 
     </Grid>
 </UserControl>
