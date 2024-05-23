@@ -5,23 +5,23 @@ public static class SqliteQueriesDictionary
     public static Dictionary<ClientDataAccess, string> Client { get; set; } = new()
     {
         {
-            ClientDataAccess.Create, 
-            @"INSERT INTO Client(Name, HourlyRate, Email, PreBill, HasCutOff, 
-                                CutOff, MinimumHours, BillingIncrement, RoundUpAfterXMinutes)
+            ClientDataAccess.Create, @"
+            INSERT INTO Client(Name, HourlyRate, Email, PreBill, HasCutOff, 
+                               CutOff, MinimumHours, BillingIncrement, RoundUpAfterXMinutes)
             VALUES(@Name, @HourlyRate, @Email, @PreBill, @HasCutOff, 
-                    @CutOff, @MinimumHours, @BillingIncrement, @RoundUpAfterXMinutes)"
+                   @CutOff, @MinimumHours, @BillingIncrement, @RoundUpAfterXMinutes)"
         },
         {
-            ClientDataAccess.Update, 
-            @"UPDATE Client
+            ClientDataAccess.Update, @"
+            UPDATE Client
             SET Name = @Name, HourlyRate = @HourlyRate, Email = @Email, PreBill = @PreBill, 
                 HasCutOff = @HasCutOff, CutOff = @CutOff, MinimumHours = @MinimumHours, 
                 BillingIncrement = @BillingIncrement, RoundUpAfterXMinutes = @RoundUpAfterXMinutes
             WHERE Id = @Id"
         },
         {
-            ClientDataAccess.Get, 
-            @"SELECT* 
+            ClientDataAccess.Get, @"
+            SELECT* 
             FROM Client"
         }
     };
@@ -35,15 +35,15 @@ public static class SqliteQueriesDictionary
             LIMIT 1"
         },
         {
-            DefaultsDataAccess.Create, 
-            @"INSERT INTO Defaults(HourlyRate, PreBill, HasCutOff, CutOff, 
-                                   MinimumHours, BillingIncrement, RoundUpAfterXMinutes)
+            DefaultsDataAccess.Create, @"
+            INSERT INTO Defaults(HourlyRate, PreBill, HasCutOff, CutOff, 
+                                 MinimumHours, BillingIncrement, RoundUpAfterXMinutes)
             VALUES(@HourlyRate, @PreBill, @HasCutOff, @CutOff, 
                    @MinimumHours, @BillingIncrement, @RoundUpAfterXMinutes)"
         },
         {
-            DefaultsDataAccess.Update, 
-            @"UPDATE Defaults
+            DefaultsDataAccess.Update, @"
+            UPDATE Defaults
             SET HourlyRate = @HourlyRate, PreBill = @PreBill, HasCutOff = @HasCutOff, 
                 CutOff = @CutOff, MinimumHours = @MinimumHours, BillingIncrement = @BillingIncrement, 
                 RoundUpAfterXMinutes = @RoundUpAfterXMinutes
@@ -59,19 +59,19 @@ public static class SqliteQueriesDictionary
             FROM Payment"
         },
         {
-            PaymentDataAccess.GetByClientId, 
-            @"SELECT* 
+            PaymentDataAccess.GetByClientId, @"
+            SELECT* 
             FROM Payment
             WHERE ClientId = @ClientId"
         },
         {
-            PaymentDataAccess.Create, 
-            @"INSERT INTO Payment(ClientId, Hours, Amount, Date)
+            PaymentDataAccess.Create, @"
+            INSERT INTO Payment(ClientId, Hours, Amount, Date)
             VALUES(@ClientId, @Hours, @Amount, @Date)"
         },
         {
-            PaymentDataAccess.Update, 
-            @"UPDATE Payment 
+            PaymentDataAccess.Update, @"
+            UPDATE Payment 
             SET ClientId = ClientId, Hours = @Hours, Amount = @Amount
             WHERE Id = @Id"
         }
