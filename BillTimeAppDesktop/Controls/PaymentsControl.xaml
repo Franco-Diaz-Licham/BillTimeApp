@@ -31,16 +31,13 @@
         
         <!--row 1-->
         <StackPanel Grid.Row="1"
-                    Orientation="Horizontal"
+                    Orientation="Vertical"
                     Margin="0 0 0 5">
-            <StackPanel Orientation="Vertical">
-                <TextBlock>Client:</TextBlock>
-                <ComboBox x:Name="clientDropDown"
-                          Background="#C8C8C8"
-                          Width="264"
-                          DisplayMemberPath="Name"
-                          SelectionChanged="clientDropDown_Selected"/>
-            </StackPanel>
+            <TextBlock>Client:</TextBlock>
+            <ComboBox x:Name="clientDropDown"
+                      Background="#C8C8C8"
+                      DisplayMemberPath="Name"
+                      SelectionChanged="clientDropDown_Selected"/>
         </StackPanel>
 
         <!--row 2-->
@@ -49,11 +46,11 @@
                     Margin="0 0 0 5"
                     x:Name="dateStackPanel">
             <StackPanel Orientation="Vertical">
-                <TextBlock>Date:</TextBlock>
+                <TextBlock>Paid Date:</TextBlock>
                 <ComboBox x:Name="dateDropDown"
                           Background="#C8C8C8"
                           Width="160"
-                          DisplayMemberPath="DateOnly"
+                          DisplayMemberPath="DisplayValue"
                           SelectedValuePath="Id"
                           SelectionChanged="dateDropDown_SelectionChanged"/>
             </StackPanel>
@@ -92,7 +89,8 @@
         <!--row 5-->
         <Button x:Name="submitForm" 
                 Grid.Row="5"
-                Padding="5"
+                Padding="10 2"
+                Margin="90 0"
                 Background="Gray"
                 FontWeight="DemiBold"
                 Click="submitForm_Click">Submit</Button>

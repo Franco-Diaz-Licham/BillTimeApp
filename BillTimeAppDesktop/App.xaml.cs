@@ -18,11 +18,11 @@ public partial class App : Application
         var services = new ServiceCollection();
 
         //Windows and controls
-        services.AddTransient<MainWindow>();
-        services.AddTransient<AboutControl>();
-        services.AddTransient<ClientControl>();
-        services.AddTransient<DefaultsControl>();
+        services.AddScoped<MainWindow>();
+        services.AddScoped<AboutControl>();
+        services.AddScoped<DefaultsControl>();
         services.AddTransient<MainControl>();
+        services.AddTransient<ClientControl>();
         services.AddTransient<PaymentsControl>();
         services.AddTransient<WorkControl>();
 

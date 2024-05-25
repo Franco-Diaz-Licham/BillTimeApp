@@ -124,7 +124,6 @@ public partial class ClientControl : UserControl
             RoutedEventArgs e)
     {
         NewClientEntry = false;
-
         var model = (ClientModel)clientDropDown.SelectedItem;
 
         if (model is null)

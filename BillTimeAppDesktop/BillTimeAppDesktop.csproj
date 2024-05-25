@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>BillTimeAppIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="BillTimeAppIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="BillTimeDb.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

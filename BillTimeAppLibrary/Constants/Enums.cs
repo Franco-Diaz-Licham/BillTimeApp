@@ -25,3 +25,12 @@ public enum PaymentDataAccess
     Delete = 3,
     GetByClientId = 4,
 }
+
+public enum WorkDataAccess
+{
+    Get = 0,
+    Update = 1,
+    Create = 2,
+    Delete = 3,
+    GetByClientId = 4,
+}

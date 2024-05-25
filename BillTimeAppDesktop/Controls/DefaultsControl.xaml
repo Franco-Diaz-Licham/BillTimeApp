@@ -37,7 +37,8 @@
        
         <!--row 1-->
         <TextBlock Grid.Row="1" 
-                   Grid.Column="0">Rate:</TextBlock>
+                   ToolTip="Amount to charge per hour."
+                   Grid.Column="0">Hourly Rate ($/hr):</TextBlock>
         <TextBox Grid.Row="1"
                  Grid.Column="1" 
                  x:Name="hourlyRateTextBox"
@@ -50,14 +51,17 @@
                     Margin=" 0 0 0 20">
             <CheckBox x:Name="preBillCheckBox"
                       Margin="0 0 20 0"
+                      ToolTip="Whether the client was charged before work."
                       Background="#C8C8C8">Pre-bill</CheckBox>
             <CheckBox x:Name="hasCutOffCheckBox"
+                      ToolTip="Whether the client has a cut-off time."
                       Background="#C8C8C8">Cut-off</CheckBox>
         </StackPanel>
 
         <!--row 3-->
         <TextBlock Grid.Row="3"
-                   Grid.Column="0">Cut-off Number:</TextBlock>
+                   ToolTip="Maximum amount of time to work for a client in hours."
+                   Grid.Column="0">Cut-off Number (hr):</TextBlock>
         <TextBox Grid.Row="3"
                  Grid.Column="1" 
                  x:Name="cutOffTextBox"
@@ -66,7 +70,8 @@
 
         <!--row 4-->
         <TextBlock Grid.Row="4"
-                   Grid.Column="0">Mininum Hours:</TextBlock>
+                   ToolTip="Minimum amount of time to work for a client in hours."
+                   Grid.Column="0">Mininum Hours (hr):</TextBlock>
         <TextBox Grid.Row="4"
                  Grid.Column="1"
                  x:Name="minimumHoursTextBox"
@@ -75,7 +80,8 @@
 
         <!--row 5-->
         <TextBlock Grid.Row="5"
-                   Grid.Column="0">Billing Increment:</TextBlock>
+                   ToolTip="Period of time to charge client in hours."
+                   Grid.Column="0">Billing Increment (hr):</TextBlock>
         <TextBox Grid.Row="5"
                  Grid.Column="1"
                  x:Name="billingIncrementTextBox"
@@ -84,7 +90,9 @@
             
         <!--row 6-->
         <TextBlock Grid.Row="6"
-                   Grid.Column="0">Round-up X min. :</TextBlock>
+                   Grid.Column="0"
+                   ToolTip="Time threshold to add an additional billing increment in minutes."
+                   Margin="0 0 40 0" >Round-up X (min):</TextBlock>
         <TextBox Grid.Row="6"
                  Grid.Column="1"
                  x:Name="roundUpAfterXMinutesTextBox"
@@ -94,10 +102,11 @@
         <!--row 7-->
         <Button x:Name="submitForm" 
                 Grid.Row="7"
-                Padding="5"
+                Padding="10 2"
                 Background="Gray"
                 FontWeight="DemiBold"
                 Grid.ColumnSpan="2"
+                Margin="90 0"
                 Click="submitForm_Click">Submit</Button>
     </Grid>
 </UserControl>

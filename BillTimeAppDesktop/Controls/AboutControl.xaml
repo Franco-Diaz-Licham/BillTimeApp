@@ -51,8 +51,8 @@
                    TextWrapping="Wrap"
                    Width="180"
                    HorizontalAlignment="Center">
-            This is a small application to help a developer
-            keep track of their work for clients.
+            This is a small application to help a freelance developer
+            keep track of their work for various clients.
         </TextBlock>
 
     </Grid>

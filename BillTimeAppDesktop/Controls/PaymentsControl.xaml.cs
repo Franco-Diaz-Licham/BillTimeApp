@@ -4,6 +4,7 @@ public partial class PaymentsControl : UserControl
 {
     public ISqliteData Data { get; }
     private bool NewDateEntry { get; set; } = true;
+    public int MyProperty { get; set; }
 
     public PaymentsControl(
             ISqliteData data)
@@ -17,8 +18,9 @@ public partial class PaymentsControl : UserControl
             EventArgs e)
     {
         base.OnInitialized(e);
-        clientDropDown.ItemsSource = Data.GetClients();
+        SetPaymentVisibility(false);
         SetFormVisibility(false);
+        clientDropDown.ItemsSource = Data.GetClients();
     }
     #endregion
 
@@ -27,14 +29,7 @@ public partial class PaymentsControl : UserControl
     {
         amountTextBox.Text = string.Empty;
         hoursTextBox.Text = string.Empty;
-        dateDropDown.ItemsSource = null;
-        dateDropDown.SelectedValue = null;
-    }
-
-    private void ResetForm()
-    {
-        ClearFormData();
-        dateDropDown.ItemsSource = null;
+        dateDropDown.SelectedItem = null;
         dateDropDown.SelectedValue = null;
     }
 
@@ -52,16 +47,23 @@ public partial class PaymentsControl : UserControl
         {
             hoursStackPanel.Visibility = Visibility.Visible;
             amountStackPanel.Visibility = Visibility.Visible;
-            dateStackPanel.Visibility = Visibility.Visible;
             submitForm.Visibility = Visibility.Visible;
         }
         else
         {
             hoursStackPanel.Visibility = Visibility.Hidden;
             amountStackPanel.Visibility = Visibility.Hidden;
-            dateStackPanel.Visibility = Visibility.Hidden;
             submitForm.Visibility = Visibility.Hidden;
         }
+    }
+
+    private void SetPaymentVisibility(
+            bool visible)
+    {
+        if (visible is true)
+            dateStackPanel.Visibility = Visibility.Visible;
+        else
+            dateStackPanel.Visibility = Visibility.Hidden;
     }
 
     private (bool isValid, PaymentModel? model) Validate()
@@ -98,6 +100,7 @@ public partial class PaymentsControl : UserControl
         if (dateDropDown.SelectedItem is null)
             return;
 
+        SetFormVisibility(true);
         NewDateEntry = false;
         var payment = (PaymentModel)dateDropDown.SelectedItem;
 
@@ -112,7 +115,8 @@ public partial class PaymentsControl : UserControl
             RoutedEventArgs e)
     {
         NewDateEntry = true;
-        ResetForm();
+        ClearFormData();
+        SetFormVisibility(true);
     }
 
     private void submitForm_Click(
@@ -132,24 +136,22 @@ public partial class PaymentsControl : UserControl
 
         dateDropDown.ItemsSource = Data.GetPayments(model!.ClientId);
 
-        if (NewDateEntry is false)
-        {
-            clientDropDown.SelectedValue = model!.Id;
-            return;
-        }
-
-        ResetForm();
+        if(NewDateEntry is false)
+            dateDropDown.SelectedValue = model.Id;
+        else
+            ClearFormData();
     }
 
     private void clientDropDown_Selected(
             object sender,
             RoutedEventArgs e)
     {
-        if(clientDropDown.SelectedItem is null)
+        if (clientDropDown.SelectedItem is null)
             return;
 
-        SetFormVisibility(true);
-        ResetForm();
+        SetPaymentVisibility(true);
+        SetFormVisibility(false);
+        ClearFormData();
         NewDateEntry = false;
 
         var client = (ClientModel)clientDropDown.SelectedItem;

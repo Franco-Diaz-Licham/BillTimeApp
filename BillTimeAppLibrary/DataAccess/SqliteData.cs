@@ -76,18 +76,18 @@ public class SqliteData : ISqliteData
     }
 
     public List<PaymentModel> GetPayments(
-            int? id = null)
+            int? clientId = null)
     {
         string sql;
         object p = new();
 
-        if (id is null)
+        if (clientId is null)
         {
             SqliteQueriesDictionary.Payment.TryGetValue(PaymentDataAccess.Get, out sql!);
         }
         else
         {
-            p = new { ClientId = id };
+            p = new { ClientId = clientId };
             SqliteQueriesDictionary.Payment.TryGetValue(PaymentDataAccess.GetByClientId, out sql!);
         }
 
@@ -114,6 +114,50 @@ public class SqliteData : ISqliteData
             SqliteQueriesDictionary.Payment.TryGetValue(PaymentDataAccess.Update, out sql!);
 
         Db.Save(sql!, client);
+    }    
+    
+    public void SaveWork(
+            WorkModel model)
+    {
+        string sql;
+        object client = new
+        {
+            model.Id,
+            model.ClientId,
+            model.Hours,
+            model.Title,
+            model.Description,
+            model.DateEntered,
+            model.PaymentId,
+            model.Paid
+        };
+
+        if (model.Id is 0)
+            SqliteQueriesDictionary.Work.TryGetValue(WorkDataAccess.Create, out sql!);
+        else
+            SqliteQueriesDictionary.Work.TryGetValue(WorkDataAccess.Update, out sql!);
+
+        Db.Save(sql!, client);
+    }
+
+    public List<WorkModel> GetWork(
+            int? clientId = null)
+    {
+        string sql;
+        object p = new();
+
+        if (clientId is null)
+        {
+            SqliteQueriesDictionary.Work.TryGetValue(WorkDataAccess.Get, out sql!);
+        }
+        else
+        {
+            p = new { ClientId = clientId };
+            SqliteQueriesDictionary.Work.TryGetValue(WorkDataAccess.GetByClientId, out sql!);
+        }
+
+        var row = Db.Get<WorkModel, object>(sql!, p).ToList();
+        return row;
     }
 
 }

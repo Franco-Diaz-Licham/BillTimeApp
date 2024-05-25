@@ -7,5 +7,6 @@ global using System.Windows.Controls;
 global using BillTimeAppLibrary.Databases;
 global using BillTimeAppLibrary.DataAccess;
 global using BillTimeAppLibrary.Models;
+global using System.Diagnostics;
 
 

@@ -7,12 +7,8 @@ public class PaymentModel
     public ClientModel? Client { get; set; }
     public double Hours { get; set; }
     public double Amount { get; set; }
-    public DateTime? Date { get; set; }
+    public DateTime Date { get; set; }
 
-    public string DateOnly {
-        get
-        {
-            return Date.Value.ToString("d");
-        }
-    }
+    public string DateOnly => Date.ToString("d");
+    public string DisplayValue => $"{DateOnly} - ${Amount}";
 }

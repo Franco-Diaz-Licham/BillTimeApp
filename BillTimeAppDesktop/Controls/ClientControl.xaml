@@ -145,9 +145,10 @@
         <!--row 7-->
         <Button x:Name="submitForm" 
                 Grid.Row="7"
-                Padding="5"
+                Padding="10 2"
                 Background="Gray"
                 FontWeight="DemiBold"
+                Margin="90 0"
                 Click="submitForm_Click">Submit</Button>
     </Grid>
 </UserControl>

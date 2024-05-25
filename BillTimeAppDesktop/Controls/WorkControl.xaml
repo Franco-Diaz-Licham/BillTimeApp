@@ -35,45 +35,59 @@
                     Orientation="Vertical">
             <TextBlock>Client:</TextBlock>
             <ComboBox x:Name="clientDropDown"
-                      Background="#C8C8C8"/>
+                      Background="#C8C8C8"
+                      DisplayMemberPath="Name"
+                      SelectedValue="Id"
+                      SelectionChanged="clientDropDown_SelectionChanged"/>
         </StackPanel>
 
         <!--row 2-->
         <StackPanel Grid.Row="2"
+                    Orientation="Vertical"
+                    Margin="0 0 0 5"
+                    x:Name="dateStackPanel">
+            <TextBlock>Work Date:</TextBlock>
+            <ComboBox x:Name="dateDropDown"
+                      Background="#C8C8C8"
+                      DisplayMemberPath="DisplayValue"
+                      SelectedValuePath="Id"
+                      HorizontalAlignment="Left"
+                      Width="264"
+                      SelectionChanged="dateDropDown_SelectionChanged"/>
+        </StackPanel>
+
+        <!--row 3-->
+        <StackPanel Grid.Row="3"
                     Orientation="Horizontal"
-                    Margin="0 0 0 5">
-            <StackPanel Width="174"
+                    Margin="0 0 0 5"
+                    x:Name="titleStackPanel">
+            <StackPanel Grid.Row="3"
+                        Orientation="Vertical"
+                        Width="194"
                         Margin="0 0 10 0">
-                <TextBlock>Date:</TextBlock>
-                <ComboBox x:Name="dateDropDown"
-                          Background="#C8C8C8"/>
+                <TextBlock>Title:</TextBlock>
+                <TextBox x:Name="titleTextBox"
+                     Background="#C8C8C8"/>
             </StackPanel>
             <StackPanel Grid.Row="3"
                         Orientation="Vertical"
-                        Width="80">
+                        Width="60">
                 <TextBlock>Hours:</TextBlock>
                 <TextBox x:Name="hoursTextBox"
                      Background="#C8C8C8"/>
             </StackPanel>
         </StackPanel>
 
-        <!--row 3-->
-        <StackPanel Grid.Row="3"
-                    Orientation="Vertical"
-                    Margin="0 0 0 5">
-            <TextBlock>Title:</TextBlock>
-            <TextBox x:Name="titleTextBox"
-                     Background="#C8C8C8"/>
-        </StackPanel>
-
         <!--row 4-->
         <StackPanel Grid.Row="4"
                     Orientation="Vertical"
-                    Margin="0 0 0 5">
+                    Margin="0 0 0 5"
+                    x:Name="descriptionStackPanel">
             <TextBlock>Description:</TextBlock>
             <TextBox x:Name="descriptionTextBox"
                      TextWrapping="Wrap"
                      Height="50"
+                     Width="264"
                      AcceptsReturn="True"
                      Background="#C8C8C8"/>
         </StackPanel>
@@ -81,16 +95,19 @@
         <!--row 5-->
         <StackPanel Grid.Row="5"
                     Orientation="Horizontal"
-                    Margin="0 0 0 10">
-            <CheckBox x:Name="preBillCheckBox"
+                    Margin="0 0 0 10"
+                    x:Name="paymentStackPanel">
+            <CheckBox x:Name="paidCheckBox"
                       Margin="0 0 10 5"
                       Background="#C8C8C8"
-                      VerticalAlignment="Bottom">Pre-bill</CheckBox>
+                      VerticalAlignment="Bottom">Paid</CheckBox>
             <StackPanel Grid.Row="3"
                         Orientation="Vertical"
-                        Width="183">
-                <TextBlock>Payment:</TextBlock>
+                        Width="204">
+                <TextBlock>Payment Date:</TextBlock>
                 <ComboBox x:Name="paymentDropDown"
+                          DisplayMemberPath="DisplayValue"
+                          SelectedValuePath="Id"
                           Background="#C8C8C8"/>
             </StackPanel>
         </StackPanel>
@@ -98,9 +115,11 @@
         <!--row 6-->
         <Button x:Name="submitForm" 
                 Grid.Row="6"
-                Padding="5"
+                Padding="10 2"
                 Background="Gray"
-                FontWeight="DemiBold">Submit</Button>
+                Margin="90 0"
+                FontWeight="DemiBold"
+                Click="submitForm_Click">Submit</Button>
 
     </Grid>
 </UserControl>

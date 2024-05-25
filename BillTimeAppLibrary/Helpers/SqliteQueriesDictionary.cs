@@ -29,8 +29,8 @@ public static class SqliteQueriesDictionary
     public static Dictionary<DefaultsDataAccess, string> Defaults { get; set; } = new()
     {
         {
-            DefaultsDataAccess.Get, 
-            @"SELECT* 
+            DefaultsDataAccess.Get, @"
+            SELECT* 
             FROM Defaults
             LIMIT 1"
         },
@@ -72,7 +72,35 @@ public static class SqliteQueriesDictionary
         {
             PaymentDataAccess.Update, @"
             UPDATE Payment 
-            SET ClientId = ClientId, Hours = @Hours, Amount = @Amount
+            SET ClientId = @ClientId, Hours = @Hours, Amount = @Amount
+            WHERE Id = @Id"
+        }
+    };
+
+    public static Dictionary<WorkDataAccess, string> Work { get; set; } = new()
+    {
+        {
+            WorkDataAccess.Get,
+            @"SELECT* 
+            FROM Work"
+        },
+        {
+            WorkDataAccess.GetByClientId, @"
+            SELECT* 
+            FROM Work
+            WHERE ClientId = @ClientId"
+        },
+        {
+            WorkDataAccess.Create, @"
+            INSERT INTO Work(ClientId, Hours, Title, Description, Paid, PaymentId, DateEntered)
+            VALUES(@ClientId, @Hours, @Title, @Description, @Paid, @PaymentId, @DateEntered)"
+        },
+        {
+            WorkDataAccess.Update, @"
+            UPDATE Work 
+            SET ClientId = @ClientId, Hours = @Hours, Title = @Title, 
+                Description = @Description, Paid = @Paid, PaymentId = @PaymentId,
+                DateEntered = @DateEntered
             WHERE Id = @Id"
         }
     };

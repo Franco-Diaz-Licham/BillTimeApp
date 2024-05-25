@@ -32,48 +32,89 @@
         <!--row 1-->
         <StackPanel Grid.Row="1"
                     Orientation="Vertical"
-                    Margin="0 0 0 10">
+                    Margin="0 0 0 15"
+                    x:Name="clientStackPanel">
             <TextBlock>Client:</TextBlock>
             <ComboBox x:Name="clientDropDown"
                       Background="#C8C8C8"
-                      DisplayMemberPath="Name"/>
+                      DisplayMemberPath="Name"
+                      SelectionChanged="clientDropDown_SelectionChanged"/>
         </StackPanel>
         
         <!--row 2-->
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal"
-                    Margin="0 0 0 10">
-            <StackPanel Orientation="Vertical"
-                        Margin="0 0 10 0">
-                <TextBlock>Hours:</TextBlock>
-                <TextBox x:Name="hoursTextBox"
-                         Width="100"
-                         Background="#C8C8C8"/>
-            </StackPanel>
-            <Button x:Name="operateTime"
-                    Padding="5 0 5 0"
+                    Margin="0 0 0 15"
+                    VerticalAlignment="Center"
+                    x:Name="timerStackPanel">
+            <StackPanel Orientation="Horizontal"
+                        Width="175">
+                <Button x:Name="startTimeButton"
+                    Grid.Row="2"
+                    Padding="10 2"
+                    Margin="0 0 5 0"
+                    Background="Green"
+                    Foreground="White"
+                    FontWeight="DemiBold"
+                    VerticalAlignment="Center"
+                    Click="startTimeButton_Click"
+                    Width="80">Start</Button>
+                <Button x:Name="stopTimeButton"
+                    Padding="10 2"
+                    Background="Red"
+                    Foreground="White"
+                    FontWeight="DemiBold"
+                    VerticalAlignment="Center"
+                    Click="stopTimeButton_Click"
+                    Width="80">Stop</Button>
+                <Button x:Name="resetTimeButton"
+                    Padding="10 2"
                     Background="Gray"
                     FontWeight="DemiBold"
-                    VerticalAlignment="Bottom">Start Timer</Button>
+                    VerticalAlignment="Center"
+                    Click="resetTimeButton_Click"
+                    Width="80">Reset</Button>
+            </StackPanel>
+            <TextBlock VerticalAlignment="Center"
+                       FontWeight="Bold"
+                       FontSize="22"
+                       x:Name="timerTextBlock"
+                       Foreground="Red"></TextBlock>
         </StackPanel>
-        
+
+
         <!--row 3-->
         <StackPanel Grid.Row="3"
-                    Orientation="Vertical"
-                    Margin="0 0 0 10">
-            <TextBlock>Title:</TextBlock>
-            <TextBox x:Name="titleTextBox"
+                    Orientation="Horizontal"
+                    Margin="0 0 0 10"
+                    x:Name="titleStackPanel">
+            <StackPanel Grid.Row="3"
+                        Orientation="Vertical"
+                        Width="194"
+                        Margin="0 0 10 0">
+                <TextBlock>Title:</TextBlock>
+                <TextBox x:Name="titleTextBox"
                      Background="#C8C8C8"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3"
+                        Orientation="Vertical"
+                        Width="60">
+                <TextBlock>Hours:</TextBlock>
+                <TextBox x:Name="hoursTextBox"
+                     Background="#C8C8C8"/>
+            </StackPanel>
         </StackPanel>
 
         <!--row 4-->
         <StackPanel Grid.Row="4"
                     Orientation="Vertical"
-                    Margin="0 0 0 10">
+                    Margin="0 0 0 10"
+                    x:Name="descriptionStackPanel">
             <TextBlock>Description:</TextBlock>
             <TextBox x:Name="descriptionTextBox"
                      TextWrapping="Wrap"
                      Height="80"
+                     Width="264"
                      AcceptsReturn="True"
                      Background="#C8C8C8"/>
         </StackPanel>
@@ -81,9 +122,10 @@
         <!--row 5-->
         <Button x:Name="submitForm" 
                 Grid.Row="5"
-                Padding="5"
+                Padding="10 2"
                 Background="Gray"
                 FontWeight="DemiBold"
+                Margin="90 0"
                 Click="submitForm_Click">Submit</Button>
     </Grid>
 </UserControl>
