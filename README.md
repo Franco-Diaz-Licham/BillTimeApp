@@ -16,7 +16,7 @@ They are also be defined below:
 * Cut-off: Whether the client has a cut-off time.
 * Cut-off Number: Maximum amount of time to work for a client in hours.
 * Minimum Hours: Minimum amount of time to work for a client in hours.
-* Billing Increment:Period of time to charge client in hours.
+* Billing Increment: Period of time to charge client in hours.
 * Round-up X: Time threshold to add an additional billing increment in minutes.
 
 The application uses SQLite for the database and data access is implemented with Dapper as the ORM.
