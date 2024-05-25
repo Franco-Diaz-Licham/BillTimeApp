@@ -5,7 +5,7 @@ The application has a built in timer so a user can keep record of their work and
 pay rate information specified in the application.
 
 <p align="center">
-  <img src="https://github.com/Franco-Diaz-Licham/BillTimeApp/assets/138960498/22b79ee8-82c0-47ca-9387-45d25e3269ea" />
+  <img src="https://github.com/Franco-Diaz-Licham/BillTimeApp/assets/138960498/17050f00-d645-4f09-8a8f-12fbc7dc7693" />
 </p>
 
 Important word definitions for payment information can be found under the "defaults" section as tooltips.
