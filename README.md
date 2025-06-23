@@ -19,4 +19,4 @@ Important word definitions for payment information can be found under the "defau
 * __Round-up X:__ Time threshold to add an additional billing increment in minutes.
 
 The application uses __SQLite__ for the database and data access is implemented with __Dapper__ as the ORM.
-This application was completed as a practice project based on Tim Corey's course on C# Application Development.
+
